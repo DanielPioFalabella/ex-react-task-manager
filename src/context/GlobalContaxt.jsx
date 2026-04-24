@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const GlobalContext = createContext() 
+export const GlobalContext = createContext() 
 
 export const GlobalProvider = ({children}) => {
 const [tasks, setTasks] = useState([])
@@ -17,7 +17,7 @@ axios.get(`${import.meta.env.VITE_API_URL}/tasks`)
 }, [])
 
 return (
-    <GlobalContext.Provider value={{tasks}}>
+    <GlobalContext.Provider value={{tasks, setTasks}}>
         {children}
     </GlobalContext.Provider>
 )
