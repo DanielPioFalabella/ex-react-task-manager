@@ -1,0 +1,35 @@
+.to-do {
+    background-color: rgb(255, 0, 0, 0.1);
+    border: 1px solid rgb(255, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 4px 10px;
+    text-align: center;
+    width: 20%;
+}
+
+.doing {
+    background-color: rgb(255, 230, 0, 0.1);
+    border: 1px solid rgba(255, 213, 0, 0.3);
+    border-radius: 4px;
+    padding: 4px 10px;
+    text-align: center;
+    width: 20%;
+}
+
+.done {
+    background-color: rgb(3, 206, 0, 0.1);
+    border: 1px solid rgb(3, 206, 0, 0.2);
+    border-radius: 4px;
+    padding: 4px 10px;
+    text-align: center;
+    width: 20%;
+}
+
+.title-task {
+    width: 50%;
+}
+
+.created-at {
+    text-align: center;
+    width: 30%;
+}
