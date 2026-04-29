@@ -1,7 +1,7 @@
 import "./TaskList.css"
 import { NavLink } from "react-router-dom"
 import { useContext } from "react"
-import { GlobalContext } from "../context/GlobalContaxt"
+import { GlobalContext } from "../context/GlobalContext"
 import TaskRow from "../components/TaskRow"
 
 const TaskList = () => {

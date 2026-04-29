@@ -1,0 +1,25 @@
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+
+    input, textarea, select {
+        margin: 10px 0px;
+        border: 1px solid gainsboro;
+        border-radius: 4px;
+        padding: 4px 10px;
+    }
+}
+
+.add-task {
+    max-width: 120px;
+    border: 1px solid rgb(101, 104, 255);
+    border-radius: 4px;
+    padding: 4px 10px;
+    background-color: rgb(227, 231, 252);
+    color: rgb(101, 104, 255);
+    font-weight: 600;
+}
+
+.error {
+    color: rgb(255, 39, 39);
+}

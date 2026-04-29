@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import TaskList from "./pages/TaskList"
 import AddTask from "./pages/AddTask"
-import { GlobalProvider } from "./context/GlobalContaxt"
+import { GlobalProvider } from "./context/GlobalContext"
 
 const App = () => {
   return (
