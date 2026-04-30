@@ -1,0 +1,24 @@
+.card-detail {
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid rgb(101, 104, 255);
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgb(227, 231, 252);
+    box-shadow: 0px 0px 16px rgba(200, 194, 229, 0.6);
+}
+
+.btn-delete {
+    max-width: 120px;
+    border: 1px solid rgb(255, 101, 101);
+    border-radius: 4px;
+    padding: 4px 10px;
+    background-color: rgb(252, 227, 227);
+    color: rgb(255, 101, 101);
+    font-weight: 600;
+}
+
+.btn-delete:hover {
+    background-color: rgb(255, 101, 101);
+    color: white;
+}
