@@ -1,6 +1,6 @@
 .to-do {
-    background-color: rgb(255, 0, 0, 0.1);
-    border: 1px solid rgb(255, 0, 0, 0.2);
+    background-color: rgb(255, 0, 0, 0.3);
+    border: 1px solid rgb(255, 0, 0, 0.5);
     border-radius: 4px;
     padding: 4px 10px;
     text-align: center;
@@ -8,8 +8,8 @@
 }
 
 .doing {
-    background-color: rgb(255, 230, 0, 0.1);
-    border: 1px solid rgba(255, 213, 0, 0.3);
+    background-color: rgb(255, 230, 0, 0.3);
+    border: 1px solid rgba(255, 204, 0, 0.7);
     border-radius: 4px;
     padding: 4px 10px;
     text-align: center;
@@ -17,8 +17,8 @@
 }
 
 .done {
-    background-color: rgb(3, 206, 0, 0.1);
-    border: 1px solid rgb(3, 206, 0, 0.2);
+    background-color: rgb(3, 206, 0, 0.3);
+    border: 1px solid rgb(3, 206, 0, 0.6);
     border-radius: 4px;
     padding: 4px 10px;
     text-align: center;
@@ -27,6 +27,11 @@
 
 .title-task {
     width: 50%;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 .created-at {
