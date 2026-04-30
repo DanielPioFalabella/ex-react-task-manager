@@ -29,8 +29,16 @@ const useTasks = () => {
     }
 
     // function to remove task
-    const removeTask = () => {
+    const removeTask = async (taskId) => {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/tasks/${taskId}`, {
+            method: "DELETE"
+        }) 
+        const {success, message} = await response.json();
+        if(!success) {
+            throw new Error(message)
+        }
 
+        setTasks(prev => prev.filter(t => t.id !== taskId))
     }
 
     // function to update task
