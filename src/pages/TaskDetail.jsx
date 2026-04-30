@@ -1,12 +1,14 @@
 import "./TaskDetail.css"
 import { useParams, useNavigate } from "react-router-dom"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import GlobalContext from "../context/GlobalContext";
+import Modal from "../components/Modal";
 
 const TaskDetail = () => {
     const { id } = useParams();
     const { tasks, removeTask } = useContext(GlobalContext)
     const navigateTo = useNavigate()
+    const [showModal, setShowModal] = useState(false)
 
     const task = tasks.find(t => t.id === parseInt(id))
     if (!task) {
@@ -29,7 +31,16 @@ const TaskDetail = () => {
             <p><strong>Descrizione:</strong> {task.description}</p>
             <p><strong>Stato:</strong> {task.status}</p>
             <p><strong>Data di creazione:</strong> {new Date(task.createdAt).toLocaleDateString()}</p>
-            <button className="btn-delete" onClick={handleRemove}>Elimina Task</button>
+            <button className="btn-delete" onClick={() => setShowModal(true)}>Elimina Task</button>
+
+            <Modal 
+            title="Conferma elimina task"
+            content="Sei sicuro di voler eliminare questa task?"
+            show={showModal}
+            onClose={() => setShowModal(false)}
+            onConfirm={handleRemove}
+            confirmText="Elimina"
+            />
         </div>
     )
 }

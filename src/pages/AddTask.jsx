@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useState, useRef, useMemo, useContext } from "react"
 import {GlobalContext} from "../context/GlobalContext"
 import "./AddTask.css"
@@ -9,6 +9,7 @@ const AddTask = () => {
     const descriptionRef = useRef()
     const statusRef = useRef()
     const symbols = "!@#£$%^&*()-_=+[]{}|;:'\",.<>?/`~";
+    const navigateTo = useNavigate()
 
     const titleTaskError = useMemo(() => {
         if (!titleTask.trim()) {
@@ -37,6 +38,7 @@ const AddTask = () => {
             setTitleTask("");
             descriptionRef.current.value = ""
             statusRef.current.value = ""
+            navigateTo("/")
         } catch(error){
             alert(error.message)
         }
