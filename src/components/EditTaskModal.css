@@ -1,0 +1,11 @@
+.update-modal {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea, select {
+    margin: 10px 0px;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    padding: 4px 10px;
+}

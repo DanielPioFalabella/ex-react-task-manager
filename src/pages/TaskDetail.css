@@ -11,6 +11,7 @@
 .btn-delete {
     max-width: 120px;
     margin: 10px 0;
+    margin-right: 20px;
     border: 1px solid rgb(255, 101, 101);
     border-radius: 4px;
     padding: 4px 10px;
@@ -21,5 +22,21 @@
 
 .btn-delete:hover {
     background-color: rgb(255, 101, 101);
+    color: white;
+}
+
+.btn-update {
+    max-width: 120px;
+    margin: 10px 0;
+    border: 1px solid rgb(12, 212, 35);
+    border-radius: 4px;
+    padding: 4px 10px;
+    background-color: rgb(222, 251, 221);
+    color: rgb(12, 212, 35);
+    font-weight: 600;
+}
+
+.btn-update:hover {
+    background-color: rgb(12, 212, 35);
     color: white;
 }
