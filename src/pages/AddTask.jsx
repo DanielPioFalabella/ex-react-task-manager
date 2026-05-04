@@ -46,8 +46,10 @@ const AddTask = () => {
 
     return (
         <>
-        <NavLink to={"/"}>Torna alla lista dei task</NavLink>
-
+        <div className="header">
+            <button className="btn-header"><NavLink to={"/"}>Torna alla lista dei task</NavLink></button>
+        </div>
+        
         <form className="add-task-form" onSubmit={handleForm}>
             <input type="text" 
             value={titleTask}
