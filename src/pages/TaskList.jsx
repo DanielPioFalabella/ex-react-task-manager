@@ -1,12 +1,45 @@
 import "./TaskList.css"
 import { NavLink } from "react-router-dom"
-import { useContext } from "react"
+import { useContext, useState, useMemo } from "react"
 import { GlobalContext } from "../context/GlobalContext"
 import TaskRow from "../components/TaskRow"
 
 const TaskList = () => {
     const { tasks } = useContext(GlobalContext)
-    console.log("tasks:", tasks)
+    const [sortBy, setSortBy] = useState("createdAt")
+    const [sortOrder, setSortOrder] = useState(1)
+
+    const handleItem = (field) => {
+        if(sortBy === field) {
+            setSortOrder(prev => prev * -1)
+        } else {
+            setSortBy(field)
+            setSortOrder(1)
+        }
+    }
+
+    const sortIcon = sortOrder === 1 ? "▲" : "▼"
+
+    const tasksOrder = useMemo (() => {
+        return [...tasks].sort((a, b) => {
+            let comparison;
+
+            if (sortBy === "title") {
+                comparison = a.title.localeCompare(b.title)
+            } else if (sortBy === "status") {
+                const arrayStatus = ["To do", "Doing", "Done"];
+                const statusA = arrayStatus.indexOf(a.status);
+                const statusB = arrayStatus.indexOf(b.status)
+                comparison = statusA - statusB
+            } else if(sortBy === "createdAt") {
+                const dateA = new Date(a.createdAt).getTime();
+                const dateB = new Date(b.createdAt).getTime();
+                comparison = dateA - dateB
+            }
+
+            return comparison * sortOrder
+        })
+    }, [tasks, sortBy, sortOrder])
 
     return (
         <>
@@ -15,13 +48,13 @@ const TaskList = () => {
             <table>
                 <thead>
                     <tr className="titolo-tabella">
-                        <th>Task</th>
-                        <th>Stato</th>
-                        <th>Data di creazione</th>
+                        <th onClick={() => handleItem("title")}>Task {sortBy === "title" && sortIcon}</th>
+                        <th onClick={() => handleItem("status")}>Stato {sortBy === "status" && sortIcon}</th>
+                        <th onClick={() => handleItem("createdAt")}>Data di creazione {sortBy === "createdAt" && sortIcon}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {tasks.map((t) => {
+                    {tasksOrder.map((t) => {
                         return <TaskRow 
                         key={t.id} task={t}
                         /> 
